@@ -1,0 +1,20 @@
+.header {
+    grid-area: h;
+    background-color: cornflowerblue;
+    padding: 10px;
+    line-height: 1em;
+
+}
+.header img {
+    width: 100px;
+    float: left;
+}
+.choose_city ul {
+    margin: 0;
+    padding:4px;
+}
+.choose_city li {
+    display: inline;
+    margin-right: 5px;
+    font-size: small;
+}
