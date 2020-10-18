@@ -11,10 +11,14 @@
 }
 .choose_city ul {
     margin: 0;
-    padding:4px;
+    padding:4px;;
 }
 .choose_city li {
     display: inline;
     margin-right: 5px;
     font-size: small;
+}
+.choose_city a {
+    text-decoration: none;
+    color: black;
 }

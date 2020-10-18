@@ -1,9 +1,9 @@
 import React from 'react';
-import './MainPage.css';
+import classes from './MainPage.module.css';
 
 const MainPage = () => {
     return (
-        <div className='content'>Main content</div>
+        <div>Main content</div>
     )
 }
 
