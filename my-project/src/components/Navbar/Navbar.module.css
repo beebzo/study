@@ -1,8 +1,12 @@
 .nav {
     grid-area: n;
     background-color: cornflowerblue;
+    padding: 20px;
 }
 .main_menu a{
     text-decoration: none;
     color: black;
+}
+.main_menu a.active {
+    color: yellow;
 }

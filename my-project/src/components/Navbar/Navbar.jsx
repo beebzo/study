@@ -6,21 +6,23 @@ const Navbar = () => {
     return (
         <nav className={classes.nav}>
             <div className={classes.main_menu}>
-                <NavLink to='Mainpage'>Главная</NavLink></div>
+                <NavLink to='Mainpage' activeClassName={classes.active}>Главная</NavLink></div>
+            <div className={classes.main_menu} activeClassName={classes.active}>
+                <NavLink to="" activeClassName={classes.active}>Акции</NavLink></div>
+            <div className={classes.main_menu} activeClassName={classes.active}>
+                <NavLink to="" activeClassName={classes.active}>Каталог</NavLink></div>
             <div className={classes.main_menu}>
-                <NavLink to="">Акции</NavLink></div>
+                <NavLink to="" activeClassName={classes.active}>Доставка и оплата</NavLink></div>
             <div className={classes.main_menu}>
-                <NavLink to="">Каталог</NavLink></div>
+                <NavLink to="" activeClassName={classes.active}>Контакты</NavLink></div>
             <div className={classes.main_menu}>
-                <NavLink to="">Доставка и оплата</NavLink></div>
+                <NavLink to='/Dialogs' active ClassName={classes.active}>Диалоги</NavLink></div>
             <div className={classes.main_menu}>
-                <NavLink to="">Контакты</NavLink></div>
-            <div className={classes.main_menu}>
-                <NavLink to='/Reviewpage'>Отзывы</NavLink></div>
+                <NavLink to='/Reviewpage' activeClassName={classes.active}>Отзывы</NavLink></div>
             <div className={classes.main_menu}
-            ><NavLink to="">Магазины</NavLink></div>
+            ><NavLink to="" activeClassName={classes.active}>Магазины</NavLink></div>
             <div className={classes.main_menu}>
-                <NavLink to="">Корзина</NavLink></div>
+                <NavLink to="" activeClassName={classes.active}>Корзина</NavLink></div>
 
         </nav>
     )
