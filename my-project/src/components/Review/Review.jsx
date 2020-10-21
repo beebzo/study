@@ -7,6 +7,16 @@ import userpic4 from './Components/userpic4.png'
 import like from './Components/like.png'
 import dislike from './Components/dislike.png'
 
+let Profilepic = (props)  => {
+    return (
+        <div>
+          <div className={classes.profilepic}>
+            <img src={require('./Components/' + (props.picname) + '.png')} />
+          </div>
+        </div>
+    )
+        }
+
 const Review = (props) => {
     return (
         <div>
@@ -19,3 +29,4 @@ const Review = (props) => {
     )
 }
 export default Review
+export {Profilepic}
