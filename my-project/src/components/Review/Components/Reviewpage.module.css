@@ -1,0 +1,31 @@
+.header {
+    font-size: 5vw;
+    text-align: center;
+}
+
+img {
+    width: 5vw;
+    }
+
+.LikeDislike img {
+    width: 1.5vw;
+    margin-right: 15px;
+}
+
+dislike {
+    width: 2vw;
+}
+
+.NReview {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.review {
+    padding-left: 10px;
+}
+
+.LikeDislike {
+    padding-left: 10px;
+}

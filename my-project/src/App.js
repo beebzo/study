@@ -14,9 +14,9 @@ function App() {
         <Header />
         <Navbar />
         <div class='content'>
-        <Route path='/Dialogs' component={Dialogs} />
-        <Route path='/MainPage' component={MainPage} />
-        <Route path='/ReviewPage' component={Reviewpage} />
+        <Route path='/Dialogs' render={ () => <Dialogs />} />
+        <Route path='/MainPage' render={ () => <MainPage />} />
+        <Route path='/ReviewPage' render={ () => <Reviewpage />} />
         </div>
 
     </div>
