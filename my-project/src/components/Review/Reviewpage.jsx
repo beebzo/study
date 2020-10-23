@@ -9,7 +9,11 @@ import like from './Components/like.png'
 import dislike from './Components/dislike.png'
 import likecount from "./Components/Like";
 
-
+let newReviewElement = React.createRef()
+let addReview = () => {
+    let text=newReviewElement.current.value;
+    alert(text+'\n'+'Спасибо за отзыв')
+}
 
 const Reviewpage = () => {
     return (
@@ -18,8 +22,8 @@ const Reviewpage = () => {
                 Отзывы
             </div>
                 <div className={classes.NReview}>
-                    <div><textarea name="" id="" cols="30" rows="10"></textarea></div>
-                    <div><button>Написать обзор</button></div>
+                    <div><textarea ref={newReviewElement} name="" id="" cols="30" rows="10"></textarea></div>
+                    <div><button onClick={addReview}>Написать обзор</button></div>
                 </div>
             <div className={classes.review}>
                 <Profilepic picname='userpic' />

@@ -37,10 +37,14 @@ let messages = [
 let DialogElements = dialogs.map (d => <DialogItem id={d.id} name={d.name} /> );
 let MessageElements = messages.map (m => <MessageItem message={m.message} /> );
 
-
+let addMessageElement= React.createRef()
+let addMessage= () => {
+    let messageText=addMessageElement.current.value;
+    alert (messageText)
+}
 
 const Dialogs = () => {
-    return (
+    return (<div>
             <div className={classes.dialogs}>
                 <div className={classes.DialogsItems}>
                     {DialogElements}
@@ -49,6 +53,10 @@ const Dialogs = () => {
                      {MessageElements}
                 </div>
             </div>
+            <div className={classes.addMessage}><textarea ref={addMessageElement} name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <button onClick={addMessage}>Отправить</button>
+        </div>
 
     )
 }
