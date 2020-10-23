@@ -12,12 +12,7 @@ let picnames = [
     {picname: 'userpic4'}
 ]
 
-let authorNames = [
-    {authorName: 'Алексей Иванов, г. Барнаул'},
-    {authorName: 'Валентина Петрова, г. Смоленск'},
-    {authorName: 'Петр Кузнецов, г. Волгоград'},
-    {authorName: 'Виктор Степанов, г. Владивосток'}
-]
+
 
 let reviewtexts = [
     {reviewtext: 'У магазина очень быстрая доставка, с помощью СДЭК товар оказа' +
@@ -52,4 +47,4 @@ const Review = (props) => {
     )
 }
 export default Review
-export {picnames, authorNames, reviewtexts, Profilepic}
+export {picnames, reviewtexts, Profilepic}
