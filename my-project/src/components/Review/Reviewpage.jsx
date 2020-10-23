@@ -1,19 +1,19 @@
 import React from 'react';
 import classes from './Components/Reviewpage.module.css'
-import Review, {Profilepic} from "./Review";
-import userpic from './Components/userpic.png'
-import userpic2 from './Components/userpic2.png'
-import userpic3 from './Components/userpic3.png'
-import userpic4 from './Components/userpic4.png'
+import Review, { picnames, reviewtexts, authorNames,Profilepic} from "./Review";
 import like from './Components/like.png'
 import dislike from './Components/dislike.png'
 import likecount from "./Components/Like";
+
+
 
 let newReviewElement = React.createRef()
 let addReview = () => {
     let text=newReviewElement.current.value;
     alert(text+'\n'+'Спасибо за отзыв')
 }
+
+/*let reviewUserpicELements = picnames.map (u => <Profilepic picname={u.picname} /> );*/
 
 const Reviewpage = () => {
     return (
@@ -26,35 +26,32 @@ const Reviewpage = () => {
                     <div><button onClick={addReview}>Написать обзор</button></div>
                 </div>
             <div className={classes.review}>
-                <Profilepic picname='userpic' />
-                <Review authorName='Алексей Иванов, г. Барнаул' />
-                <Review message='У магазина очень быстрая доставка, с помощью СДЭК товар оказался у меня на пороге через три дня после
-                    заказа.' />
+                <Profilepic picname={picnames[0].picname} />
+                <Review authorName={authorNames[0].authorName} />
+                <Review reviewtext={reviewtexts[0].reviewtext} />
                 <span className={classes.LikeDislike}><img src={like} alt=""/> {likecount}
                     <img src={dislike} alt=""/></span>
             </div>
             <div className={classes.review}>
-                <Profilepic picname='userpic2' />
-                <Review authorName='Валентина Петрова, г. Смоленск' />
-                <Review message='Честно говоря, меня удивляет, как владельцы магазина могут держать цены настолько низкими! В моем
-                    городе тот же Iphone стоит в полтора раза дороже.' />
+                <Profilepic picname={picnames[1].picname} />
+                <Review authorName={authorNames[1].authorName} />
+                <Review reviewtext={reviewtexts[1].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
             </div>
             <div className={classes.review}>
-                <Profilepic picname='userpic3' />
-                <Review authorName='Петр Кузнецов, г. Волгоград' />
-                <Review message='Мне понравилась отзывчивость и скорость продавцов, федеральным сетям стоит поучиться.' />
+                <Profilepic picname={picnames[2].picname} />
+                <Review authorName={authorNames[2].authorName} />
+                <Review reviewtext={reviewtexts[2].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
             </div>
             <div className={classes.review}>
-                <Profilepic picname='userpic4' />
-                <Review authorName='Виктор Степанов, г. Владивосток' />
-                <Review message='Хоть и живу рядом с Китаем, нахожу в ассортименте те вещи, которых нет ни у нас на азиатских рынках,
-                    ни на Aliexpress.' />
+                <Profilepic picname={picnames[3].picname} />
+                <Review authorName={authorNames[2].authorName} />
+                <Review reviewtext={reviewtexts[2].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
