@@ -20,22 +20,9 @@ const MessageItem = (props) => {
     )
 }
 
-let dialogs = [
-    {id:'1', name:'Иван Сергеев'},
-    {id:'2', name:'Сергей Иванов'},
-    {id:'3', name:'Михаил Терентьев'},
-    {id:'4', name:'Анна Петрова'},
-]
 
-let messages = [
-    {message:'Привет, как ты?'},
-    {message:'Когда встретимся?'},
-    {message:'Ну как там с деньгами?'},
-    {message:'Что нового?'}
-]
 
-let DialogElements = dialogs.map (d => <DialogItem id={d.id} name={d.name} /> );
-let MessageElements = messages.map (m => <MessageItem message={m.message} /> );
+
 
 let addMessageElement= React.createRef()
 let addMessage= () => {
@@ -43,7 +30,9 @@ let addMessage= () => {
     alert (messageText)
 }
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+    let DialogElements = props.state.dialogs.map (d => <DialogItem id={d.id} name={d.name} /> );
+    let MessageElements = props.state.messages.map (m => <MessageItem message={m.message} /> );
     return (<div>
             <div className={classes.dialogs}>
                 <div className={classes.DialogsItems}>

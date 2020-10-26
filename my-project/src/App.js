@@ -9,28 +9,21 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 
 
-function App() {
-    let authorNames = [
-        {authorName: 'Алексей Иванов, г. Барнаул'},
-        {authorName: 'Валентина Петрова, г. Смоленск'},
-        {authorName: 'Петр Кузнецов, г. Волгоград'},
-        {authorName: 'Виктор Степанов, г. Владивосток'}
-    ]
-
-
-  return (
-      <BrowserRouter>
+function App(props) {
+    return (
     <div class='app-wrapper'>
         <Header />
         <Navbar />
         <div class='content'>
-        <Route path='/Dialogs' render={ () => <Dialogs />} />
+        <Route path='/Dialogs' render={ () => <Dialogs {...props}
+        state={props.state.dialogPage}
+      />} />
         <Route path='/MainPage' render={ () => <MainPage />} />
-        <Route path='/ReviewPage' render={ () => <Reviewpage authorNames={authorNames} />} />
+        <Route path='/ReviewPage' render={ () => <Reviewpage {...props}
+        state={props.state.reviewPage}
+      />} />
         </div>
-
     </div>
-    </BrowserRouter>
 )
 }
 

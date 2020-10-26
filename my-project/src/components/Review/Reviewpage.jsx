@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Components/Reviewpage.module.css'
-import Review, { picnames, reviewtexts, Profilepic} from "./Review";
+import Review from "./Review";
 import like from './Components/like.png'
 import dislike from './Components/dislike.png'
 import likecount from "./Components/Like";
@@ -26,32 +26,32 @@ const Reviewpage = (props) => {
                     <div><button onClick={addReview}>Написать обзор</button></div>
                 </div>
             <div className={classes.review}>
-                <Profilepic picname={picnames[0].picname} />
-                <Review authorName={props.authorNames[0].authorName} />
-                <Review reviewtext={reviewtexts[0].reviewtext} />
+                <Review picname={props.state.picnames[0].picname} />
+                <Review authorName={props.state.authorNames[0].authorName} />
+                <Review reviewtext={props.state.reviewtexts[0].reviewtext} />
                 <span className={classes.LikeDislike}><img src={like} alt=""/> {likecount}
                     <img src={dislike} alt=""/></span>
             </div>
             <div className={classes.review}>
-                <Profilepic picname={picnames[1].picname} />
-                <Review authorName={props.authorNames[1].authorName} />
-                <Review reviewtext={reviewtexts[1].reviewtext} />
+                <Review picname={props.state.picnames[1].picname} />
+                <Review authorName={props.state.authorNames[1].authorName} />
+                <Review reviewtext={props.state.reviewtexts[1].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
             </div>
             <div className={classes.review}>
-                <Profilepic picname={picnames[2].picname} />
-                <Review authorName={props.authorNames[2].authorName} />
-                <Review reviewtext={reviewtexts[2].reviewtext} />
+                <Review picname={props.state.picnames[2].picname} />
+                <Review authorName={props.state.authorNames[2].authorName} />
+                <Review reviewtext={props.state.reviewtexts[2].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
             </div>
             <div className={classes.review}>
-                <Profilepic picname={picnames[3].picname} />
-                <Review authorName={props.authorNames[2].authorName} />
-                <Review reviewtext={reviewtexts[2].reviewtext} />
+                <Review picname={props.state.picnames[3].picname} />
+                <Review authorName={props.state.authorNames[3].authorName} />
+                <Review reviewtext={props.state.reviewtexts[3].reviewtext} />
                 <div className={classes.LikeDislike}><img src={like} alt=""/>
                     <img src={dislike} alt=""/>
                 </div>
