@@ -22,7 +22,9 @@ const Reviewpage = (props) => {
                 Отзывы
             </div>
                 <div className={classes.NReview}>
-                    <div><textarea ref={newReviewElement} name="" id="" cols="30" rows="10"></textarea></div>
+                    <div><textarea name="" id="" cols="30" rows="1">Ссылка на ваш аватар</textarea></div>
+                    <div><textarea name="Как вас зовут" id="" cols="30" rows="1">Как вас зовут?</textarea></div>
+                        <div><textarea ref={newReviewElement} name="" id="" cols="30" rows="10">Текст отзыва</textarea></div>
                     <div><button onClick={addReview}>Написать обзор</button></div>
                 </div>
             <div className={classes.review}>
