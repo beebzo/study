@@ -1,0 +1,16 @@
+.item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  float: left;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+span {
+   padding-left: 20px;
+}
