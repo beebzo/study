@@ -4,12 +4,23 @@
 }
 
 img {
-    width: 5vw;
+    width: 2vw;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
     }
 
+
+
+.reviewtext {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
 .LikeDislike img {
-    width: 1.5vw;
-    margin-right: 15px;
+    width: 1vw;
+    margin-right: 5px;
+    margin-bottom: 0px;
 }
 
 dislike {

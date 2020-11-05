@@ -11,6 +11,8 @@ const Navbar = () => {
                 <NavLink to='/Dialogs' activeClassName={classes.active}>Диалоги</NavLink></div>
             <div className={classes.main_menu}>
                 <NavLink to='/Reviewpage' activeClassName={classes.active}>Отзывы</NavLink></div>
+            <div className={classes.main_menu}>
+                <NavLink to='/profile' activeClassName={classes.active}>Профиль</NavLink></div>
             {/*<div className={classes.main_menu} activeClassName={classes.active}>
                 <NavLink to="" activeClassName={classes.active}>Акции</NavLink></div>
             <div className={classes.main_menu} activeClassName={classes.active}>
