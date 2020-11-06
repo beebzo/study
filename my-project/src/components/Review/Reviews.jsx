@@ -1,6 +1,4 @@
 import classes from "./Components/Reviewpage.module.css";
-import like from "./Components/like.png";
-import dislike from "./Components/dislike.png";
 import React from "react";
 import Review from "./Review";
 
