@@ -10,8 +10,7 @@ const Reviewpage = (props) => {
             <div>
                 <Reviews reviews={props.state.reviews}
                          newReviewText={props.state.newReviewText}
-                         addReview={props.addReview}
-                         updateNewReviewText={props.updateNewReviewText}
+                         dispatch={props.dispatch}
                 />
             </div>
     )

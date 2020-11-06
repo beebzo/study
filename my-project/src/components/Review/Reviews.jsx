@@ -14,12 +14,13 @@ const Reviews = (props) => {
 
     let newReviewElement = React.createRef()
     let AddReview = () => {
-        props.addReview();
+        props.dispatch({type: 'ADD-REVIEW'});
     }
 
     let onReviewChange = () => {
         let text = newReviewElement.current.value;
-        props.updateNewReviewText(text);
+        let action = {type: 'UPDATE-NEW-REVIEW-TEXT', newText: text};
+        props.dispatch(action);
     }
 
     return (

@@ -21,12 +21,11 @@ const App = (props) => {
                 <Route path='/mainPage' render={ () => <MainPage />} />
                 <Route path='/reviewPage' render={ () => <Reviewpage
                     state={props.state.reviewPage}
-                    addReview={props.addReview}
-                    updateNewReviewText={props.updateNewReviewText}
+                    dispatch={props.dispatch}
                             /> }/>
                 <Route path='/Profile' render={ () => <Profile
                     state={props.state.profilePage}
-                    addPost={props.addPost} /> }/>
+                    dispatch={props.dispatch} /> }/>
             </div>
         </div>
 )

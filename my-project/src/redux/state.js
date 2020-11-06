@@ -33,7 +33,8 @@ let store = {
                 {id: 2, message: 'It\'s my first post', likesCount: 11},
                 {id: 3, message: 'Blabla', likesCount: 11},
                 {id: 4, message: 'Dada', likesCount: 11}
-            ]
+            ],
+            newPostText: "Пост"
         },
         dialogsPage: {
             dialogs : [
@@ -52,22 +53,42 @@ let store = {
         },
         sidebar: {}
     },
+    _callSubscriber () {
+        console.log('State changed')
+    },
+
     getstate () {
         return this._state;
     },
-    callSubscriber () {
-        console.log('State changed')
+    subscribe (observer) {
+        this._callSubscriber = observer;
     },
-    addPost (postMessage) {
+
+    dispatch (action) {
+        switch (action.type) {
+            case 'ADD-POST':this._addPost(); break;
+            case 'UPDATE-NEW-POST-TEXT':this._updateNewPostText(action.newPText); break;
+            case 'ADD-REVIEW':this._addReview(); break;
+            case 'UPDATE-NEW-REVIEW-TEXT':this._updateNewReviewText(action.newText); break;
+        }
+
+    },
+
+    _addPost () {
         let newPost = {
             id: 5,
-            message: postMessage,
+            message: this._state.profilePage.newPostText,
             likesCount: 0
         };
         this._state.profilePage.posts.push(newPost);
-        this.callSubscriber(this._state);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
     },
-    addReview () {
+    _updateNewPostText (newPText) {
+        this._state.profilePage.newPostText = newPText;
+        this._callSubscriber(this._state);
+    },
+    _addReview () {
         let newReview = {
             picname: 'https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png',
             authorName: "Сергей Васильев",
@@ -75,15 +96,12 @@ let store = {
         };
         this._state.reviewPage.reviews.push(newReview);
         this._state.reviewPage.newReviewText = '';
-        this.callSubscriber(this._state);
+        this._callSubscriber(this._state);
     },
-    updateNewReviewText (newText) {
+    _updateNewReviewText (newText) {
         this._state.reviewPage.newReviewText = newText;
-        this.callSubscriber(this._state);
+        this._callSubscriber(this._state);
     },
-    subscribe (observer) {
-        this.callSubscriber = observer;
-    }
 }
 
 export default store;
