@@ -1,8 +1,7 @@
 import classes from "./Components/Reviewpage.module.css";
 import React from "react";
 import Review from "./Review";
-
-
+import {addReviewActionCreator, updateNewReviewTextActionCreator} from "../../redux/state";
 
 const Reviews = (props) => {
     let reviewElements =
@@ -12,12 +11,12 @@ const Reviews = (props) => {
 
     let newReviewElement = React.createRef()
     let AddReview = () => {
-        props.dispatch({type: 'ADD-REVIEW'});
+        props.dispatch(addReviewActionCreator());
     }
 
     let onReviewChange = () => {
         let text = newReviewElement.current.value;
-        let action = {type: 'UPDATE-NEW-REVIEW-TEXT', newText: text};
+        let action = updateNewReviewTextActionCreator(text);
         props.dispatch(action);
     }
 

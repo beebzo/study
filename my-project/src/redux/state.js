@@ -1,3 +1,8 @@
+const ADD_REVIEW = 'ADD-REVIEW';
+const UPDATE_NEW_REVIEW_TEXT = 'UPDATE-NEW-REVIEW-TEXT';
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
     _state : {
         reviewPage: {
@@ -103,6 +108,13 @@ let store = {
         this._callSubscriber(this._state);
     },
 }
+
+export const addReviewActionCreator = () => ({type: ADD_REVIEW})
+export const updateNewReviewTextActionCreator = (text) => ({
+    type: UPDATE_NEW_REVIEW_TEXT, newText: text})
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updateNewPostTextActionCreator = (text) => ({
+    type: UPDATE_NEW_POST_TEXT, newPText: text})
 
 export default store;
 window.store = store
