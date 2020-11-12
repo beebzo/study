@@ -14,9 +14,9 @@ const App = (props) => {
             <Header />
             <Navbar />
             <div className='content'>
-                <Route path='/dialogs'
-                        render={ () => <Dialogs state={props.state.dialogsPage}
-                        AddDialog={props.AddDialog} /> }/>
+                <Route path='/dialogs' render={ () => <Dialogs
+                    state={props.state.dialogsPage}
+                    dispatch={props.dispatch} /> }/>
                 <Route path='/mainPage' render={ () => <MainPage />} />
                 <Route path='/reviewPage' render={ () => <Reviewpage
                     state={props.state.reviewPage}

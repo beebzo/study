@@ -2,6 +2,8 @@ const ADD_REVIEW = 'ADD-REVIEW';
 const UPDATE_NEW_REVIEW_TEXT = 'UPDATE-NEW-REVIEW-TEXT';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
     _state : {
@@ -54,7 +56,8 @@ let store = {
                 {message:'Когда встретимся?'},
                 {message:'Ну как там с деньгами?'},
                 {message:'Что нового?'}
-            ]
+            ],
+            newMessageText: ''
         },
         sidebar: {}
     },
@@ -75,6 +78,8 @@ let store = {
             case 'UPDATE-NEW-POST-TEXT':this._updateNewPostText(action.newPText); break;
             case 'ADD-REVIEW':this._addReview(); break;
             case 'UPDATE-NEW-REVIEW-TEXT':this._updateNewReviewText(action.newText); break;
+            case 'SEND-MESSAGE':this._sendMessage(); break;
+            case 'UPDATE-NEW-MESSAGE-TEXT':this._updateNewMessageText(action.newMessageBody); break;
         }
 
     },
@@ -107,6 +112,17 @@ let store = {
         this._state.reviewPage.newReviewText = newText;
         this._callSubscriber(this._state);
     },
+    _sendMessage () {
+        let newMessage = {message: this._state.dialogsPage.newMessageText};
+        this._state.dialogsPage.messages.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._callSubscriber(this._state);
+    },
+    _updateNewMessageText (newMessageBody) {
+        this._state.dialogsPage.newMessageText = newMessageBody;
+        this._callSubscriber(this._state);
+    },
+
 }
 
 export const addReviewActionCreator = () => ({type: ADD_REVIEW})
@@ -115,6 +131,9 @@ export const updateNewReviewTextActionCreator = (text) => ({
 export const addPostActionCreator = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT, newPText: text})
+export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
+export const updateNewMessageTextActionCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE_TEXT, newMessageBody: text})
 
 export default store;
 window.store = store
