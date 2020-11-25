@@ -1,7 +1,6 @@
 import classes from "./Components/Reviewpage.module.css";
 import React from "react";
 import Review from "./Review";
-import {addReviewActionCreator, updateNewReviewTextActionCreator} from "../../redux/reviews-reducer";
 
 const Reviews = (props) => {
     let reviewElements =
@@ -10,14 +9,13 @@ const Reviews = (props) => {
                                         reviewtext={r.reviewtext} /> );
 
     let newReviewElement = React.createRef()
-    let AddReview = () => {
-        props.dispatch(addReviewActionCreator());
+    let onAddReview = () => {
+        props.addReview();
     }
 
     let onReviewChange = () => {
         let text = newReviewElement.current.value;
-        let action = updateNewReviewTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewReviewText(text);
     }
 
     return (
@@ -26,9 +24,10 @@ const Reviews = (props) => {
                 Отзывы
             </div>
             <div className={classes.NReview}>
-                <div><textarea onChange={onReviewChange} ref={newReviewElement} value={props.newReviewText}
+                <div><textarea placeholder='Ваш обзор' onChange={onReviewChange}
+                               ref={newReviewElement} value={props.newReviewText}
                                name="" id="" cols="30" rows="10"></textarea></div>
-                <div><button onClick={AddReview}>Написать обзор</button></div>
+                <div><button onClick={onAddReview}>Написать обзор</button></div>
             </div>
 
             <div>{reviewElements}</div>

@@ -66,7 +66,7 @@ let store = {
         console.log('State changed')
     },
 
-    getstate() {
+    getState() {
         return this._state;
     },
     subscribe(observer) {
