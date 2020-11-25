@@ -1,7 +1,7 @@
 import classes from "./Components/Reviewpage.module.css";
 import React from "react";
 import Review from "./Review";
-import {addReviewActionCreator, updateNewReviewTextActionCreator} from "../../redux/state";
+import {addReviewActionCreator, updateNewReviewTextActionCreator} from "../../redux/reviews-reducer";
 
 const Reviews = (props) => {
     let reviewElements =
