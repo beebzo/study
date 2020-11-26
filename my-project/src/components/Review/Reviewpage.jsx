@@ -4,8 +4,7 @@ import ReviewsContainer from "./ReviewsContainer";
 const Reviewpage = (props) => {
     return (
             <div>
-                <ReviewsContainer store={props.store}
-                />
+                <ReviewsContainer />
             </div>
     )
 }
