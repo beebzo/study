@@ -6,7 +6,8 @@ const Reviews = (props) => {
     let reviewElements =
         props.reviews.map (r => <Review picname={r.picname}
                                         authorName={r.authorName}
-                                        reviewtext={r.reviewtext} /> );
+                                        reviewtext={r.reviewtext}
+                                        key={r.id}/> );
 
     let newReviewElement = React.createRef()
     let onAddReview = () => {
