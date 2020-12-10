@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
-    background-color: cornflowerblue;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
 }
 .main_menu a{
     text-decoration: none;

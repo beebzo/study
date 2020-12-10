@@ -1,8 +1,11 @@
 .header {
-    font-size: 5vw;
+    font-size: 3vw;
     text-align: center;
 }
-
+input{
+    padding: 1rem;
+    border: .1rem #c0c0c0 solid;
+}
 img {
     width: 2vw;
     float: left;
@@ -20,13 +23,8 @@ img {
 .LikeDislike img {
     width: 1vw;
     margin-right: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
-
-dislike {
-    width: 2vw;
-}
-
 .NReview {
     padding-left: 20px;
     margin-top: 10px;
@@ -39,4 +37,10 @@ dislike {
 
 .LikeDislike {
     padding-left: 10px;
+}
+button{
+    padding: 0.1rem;
+    border: 0.1rem #c0c0c0c0 solid;
+    background-color: #f0f0f0;
+    cursor: pointer;
 }

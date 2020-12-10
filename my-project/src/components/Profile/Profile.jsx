@@ -8,7 +8,7 @@ const ProfileInfo = () => {
             <div>
             </div>
             <div className={classes.descriptionBlock}>
-                ava + description
+                ProfileInfo
             </div>
         </div>
     )

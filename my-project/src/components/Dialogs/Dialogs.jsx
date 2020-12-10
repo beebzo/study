@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";;
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
@@ -26,12 +26,12 @@ const Dialogs = (props) => {
             </div>
             <div className={classes.messages}>
                 <div>{ messagesElements }</div>
-                <div><textarea value={newMessageBody}
+            </div>
+                <div><input value={newMessageBody}
                                onChange={onNewMessageChange}
                                placeholder='Введите сообщение'
-                               name="" id="" cols="30" rows="10"></textarea></div>
-                <div><button onClick={onSendMessageClick}>Отправить сообщение</button></div>
-            </div>
+                               name="" id="" />
+                <div><button onClick={onSendMessageClick}>Отправить сообщение</button></div></div>
         </div>
     )
 }

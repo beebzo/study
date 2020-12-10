@@ -27,7 +27,7 @@ const Reviews = (props) => {
             <div className={classes.NReview}>
                 <div><textarea placeholder='Ваш обзор' onChange={onReviewChange}
                                ref={newReviewElement} value={props.newReviewText}
-                               name="" id="" cols="30" rows="10"></textarea></div>
+                               name="" id="" cols="150" rows="5" /></div>
                 <div><button onClick={onAddReview}>Написать обзор</button></div>
             </div>
 

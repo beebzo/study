@@ -19,4 +19,6 @@
 .messages .message {
     color: white;
 }
-
+input {
+    width: 100%;
+}

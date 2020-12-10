@@ -9,13 +9,14 @@ const Header = () => {
             <h3>+7 (843) 123 45 67</h3>
             <h3>+8 (800) 234 56 78</h3>
             <div className={classes.choose_city}>
-                <ul>
-                    <li><a href="">Москва</a></li>
-                    <li><a href="">Санкт-Петербург</a></li>
-                    <li><a href="">Казань</a></li>
-                    <li><a href="">Екатеринбург</a></li>
-                    <li><a href="">Новосибирск</a></li>
-                </ul>
+                <select>
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                    <option>Казань</option>
+                    <option>Екатеринбург</option>
+                    <option>Новосибирск</option>
+                    <option>Хабаровск</option>
+                </select>
             </div>
         </header>
     )
